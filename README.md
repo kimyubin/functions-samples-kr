@@ -1,386 +1,359 @@
-# Cloud Functions for Firebase Sample Library
+# Firebase용 클라우드 기능 샘플 라이브러리
 
-This repository contains a collection of samples showcasing some typical uses of [Cloud Functions for Firebase](https://firebase.google.com/features/functions).
+이 저장소는 [Firebase용 클라우드 기능](https://firebase.google.com/features/functions)의 일반적인 사용 사례를 보여주는 샘플 컬렉션을 포함하고 있습니다.
 
-Samples are available for the **Node** (2nd gen), **Python** (2nd gen), and Node (1st gen). 
+샘플은 **Node** (2세대), **Python** (2세대), 그리고 Node (1세대)에 대해 제공됩니다.
 
-> Note: Python support in Cloud Functions for Firebase is a public preview. This means that the functionality might change in backward-incompatible ways. A preview release is not subject to any SLA or deprecation policy and may receive limited or no support.
+> 주의: Firebase용 클라우드 기능의 Python 지원은 공개 미리보기입니다. 이는 기능이 하위 호환이 아닌 방식으로 변경될 수 있음을 의미합니다. 미리보기 버전은 SLA 또는 중단 정책의 적용을 받지 않으며 제한적이거나 전혀 지원되지 않을 수 있습니다.
 
-### What's Cloud Functions for Firebase?
+### Firebase용 클라우드 기능이란?
 
-Cloud Functions is a hosted, private, and scalable Node.js environment where you can run JavaScript or Python code. [Cloud Functions for Firebase](https://firebase.google.com/features/functions) integrates the Firebase platform by letting you write code that responds to events and invokes functionality exposed by other Firebase features.
+클라우드 기능은 JavaScript 또는 Python 코드를 실행할 수 있는 호스팅되고 개인적이며 확장 가능한 Node.js 환경입니다. [Firebase용 클라우드 기능](https://firebase.google.com/features/functions)은 다른 Firebase 기능에서 제공하는 기능을 호출하고 이벤트에 응답하는 코드를 작성할 수 있게 하여 Firebase 플랫폼과 통합됩니다.
 
-## Prerequisites
+## 전제 조건
 
-> All samples require the Blaze pay-as-you-go billing plan to deploy. Learn more about [pricing](https://firebase.google.com/pricing#cloud-functions).
+> 모든 샘플은 배포를 위한 Blaze 종량제 요금제를 요구합니다. [요금](https://firebase.google.com/pricing#cloud-functions) 관련 내용은 더 알아보세요.
 
-To learn how to get started with Cloud Functions for Firebase by having a look at the [Getting Started Guide](https://firebase.google.com/docs/functions/get-started), trying the [quickstart samples](/Node/quickstarts) and looking at [the documentation](https://firebase.google.com/docs/functions).
+Firebase용 클라우드 기능을 시작하는 방법은 [시작 가이드](https://firebase.google.com/docs/functions/get-started)를 살펴보거나 [퀵스타트 샘플](/Node/quickstarts)을 시도하고 [문서](https://firebase.google.com/docs/functions)를 참고하시기 바랍니다.
 
 <a name="quickstarts"></a>
-## Quickstarts
+## 퀵스타트
 
-Minimal samples for each Cloud Functions trigger type.
+각 클라우드 기능 트리거 유형에 대한 최소 샘플입니다.
 
-### Quickstart: Uppercaser for Firestore
+### 퀵스타트: Firestore용 대문자로 변환기
 
-- [Node 2nd gen](/Node/quickstarts/uppercase-firestore/)
+- [Node 2세대](/Node/quickstarts/uppercase-firestore/)
 - [Python](/Python/quickstarts/uppercase-firestore/)
-- [Node 1st gen](/Node-1st-gen/quickstarts/uppercase-firestore/)
+- [Node 1세대](/Node-1st-gen/quickstarts/uppercase-firestore/)
 
-This quickstart sample demonstrates using **Cloud Functions** triggered by **Firestore events**. The function transforms message text written to Firestore to uppercase.
+이 퀵스타트 샘플은 **Firestore 이벤트**에 의해 트리거되는 **클라우드 기능**의 사용을 보여줍니다. 이 기능은 Firestore에 기록된 메시지 텍스트를 대문자로 변환합니다.
 
-### Quickstart: Add numbers and sanitize text with callable functions
+### 퀵스타트: 호출 가능한 함수로 숫자 더하기 및 텍스트 정제하기
 
-- [Node 2nd gen](/Node/quickstarts/callable-functions/)
+- [Node 2세대](/Node/quickstarts/callable-functions/)
 - [Python](/Python/quickstarts/callable-functions)
-- [Node 1st gen](/Node-1st-gen/quickstarts/callable-functions/)
+- [Node 1세대](/Node-1st-gen/quickstarts/callable-functions/)
 
-### HTTPS trigger quickstart: Time Server
+### HTTPS 트리거 퀵스타트: 시간 서버
 
-- [Node 2nd gen](/Node/quickstarts/https-time-server/)
+- [Node 2세대](/Node/quickstarts/https-time-server/)
 - [Python](/Python/quickstarts/https-time-server/)
-- [Node 1st gen](/Node-1st-gen/quickstarts/https-time-server/)
+- [Node 1세대](/Node-1st-gen/quickstarts/https-time-server/)
 
-This quickstart sample demonstrates using **Cloud Functions** triggered by **HTTPS requests**. The function returns the current server time and allows for date time formatting.
+이 퀵스타트 샘플은 **HTTPS 요청**에 의해 트리거되는 **클라우드 기능**의 사용을 보여줍니다. 이 기능은 현재 서버 시간을 반환하며 날짜 및 시간 형식을 설정할 수 있습니다.
 
-### Quickstart: Uppercaser for Realtime Database
+### 퀵스타트: Realtime Database용 대문자로 변환기
 
-- [Node 2nd gen](/Node/quickstarts/uppercase-rtdb/)
+- [Node 2세대](/Node/quickstarts/uppercase-rtdb/)
 - [Python](/Python/quickstarts/uppercase-rtdb/)
-- [Node 1st gen](/Node-1st-gen/quickstarts/uppercase-rtdb/)
+- [Node 1세대](/Node-1st-gen/quickstarts/uppercase-rtdb/)
 
-This quickstart sample demonstrates using **Cloud Functions** triggered by **Realtime Database events**. The function transforms message text written to Realtime Database to uppercase.
+이 퀵스타트 샘플은 **Realtime Database 이벤트**에 의해 트리거되는 **클라우드 기능**의 사용을 보여줍니다. 이 기능은 Realtime Database에 기록된 메시지 텍스트를 대문자로 변환합니다.
 
-### Hosting triggered HTTPS function quickstart: Big Ben
+### 호스팅 트리거된 HTTPS 함수 퀵스타트: 빅 벤
 
-- [Node 1st gen](/Node-1st-gen/quickstarts/big-ben/)
+- [Node 1세대](/Node-1st-gen/quickstarts/big-ben/)
 
-This quickstart demonstrates using **Cloud Functions** with an HTTPS trigger that's triggered through a Firebase Hosting URL. The function will display a repeated number of "BONG"s depending on the hour of the day.
+이 퀵스타트는 Firebase Hosting URL을 통해 트리거되는 HTTPS 트리거로 **클라우드 기능**을 사용하는 방법을 보여줍니다. 이 기능은 하루 시간에 따라 반복적으로 "BONG"을 표시합니다.
 
-### Cloud Storage trigger quickstart: Thumbnail generator
+### 클라우드 스토리지 트리거 퀵스타트: 썸네일 생성기
 
-- [Node 2nd gen](/Node/quickstarts/https-time-server/)
+- [Node 2세대](/Node/quickstarts/https-time-server/)
 - [Python](/Python/quickstarts/https-time-server/)
-- [Node 1st gen](/Node-1st-gen/quickstarts/https-time-server/)
+- [Node 1세대](/Node-1st-gen/quickstarts/https-time-server/)
 
-This quickstart sample demonstrates using **Cloud Functions** triggered by **Firebase Storage events**. The function generates a thumbnail of uploaded images.
+이 퀵스타트 샘플은 **Firebase Storage 이벤트**에 의해 트리거되는 **클라우드 기능**의 사용을 보여줍니다. 이 기능은 업로드된 이미지의 썸네일을 생성합니다.
 
-### Auth trigger quickstart: Welcome Email
+### 인증 트리거 퀵스타트: 환영 이메일
 
-> Auth user create and delete triggers aren't yet supported by 2nd gen functions
+> 인증 사용자 생성 및 삭제 트리거는 아직 2세대 기능에서 지원되지 않습니다.
 
-- [Node 1st gen](/Node-1st-gen/quickstarts/email-users/)
+- [Node 1세대](/Node-1st-gen/quickstarts/email-users/)
 
-This quickstart sample demonstrates using **Cloud Functions** triggered by **Firebase Auth events**. The function sends a Welcome Email when user accounts are created (or when users sign-in using an Identity Provider for the first time) and sends a Goodbye Email when user accounts are deleted.
+이 퀵스타트 샘플은 **Firebase Auth 이벤트**에 의해 트리거되는 **클라우드 기능**의 사용을 보여줍니다. 이 기능은 사용자 계정이 생성될 때(또는 사용자가 처음으로 Identity Provider를 통해 로그인할 때) 환영 이메일을 전송하고, 사용자 계정이 삭제될 때는 작별 이메일을 전송합니다.
 
-### Auth blocking trigger quickstart: Validate and check user status
+### 인증 차단 트리거 빠른 시작: 사용자 상태 검증 및 확인
 
-- [Node 2nd gen](/Node/quickstarts/auth-blocking-functions/)
+- [Node 2세대](/Node/quickstarts/auth-blocking-functions/)
 - [Python](/Python/quickstarts/auth-blocking-functions/)
-- [Node 1st gen](/Node-1st-gen/quickstarts/auth-blocking-functions/)
+- [Node 1세대](/Node-1st-gen/quickstarts/auth-blocking-functions/)
 
-This quickstart demonstrates using **Auth blocking functions** to validate a user's email before they are allowed to sign in, and to see if a user is part of a list of banned users in Firestore.
+이 빠른 시작은 **인증 차단 기능**을 사용하여 사용자가 로그인할 수 있도록 하기 전에 이메일을 검증하고, Firestore에서 사용자 차단 목록에 사용자가 포함되어 있는지를 확인하는 방법을 보여줍니다.
 
-### PubSub trigger quickstart: Hello World
+### PubSub 트리거 빠른 시작: Hello World
 
-- [Node 2nd gen](/Node/quickstarts/pubsub-helloworld/)
+- [Node 2세대](/Node/quickstarts/pubsub-helloworld/)
 - [Python](/Python/quickstarts/pubsub-helloworld/)
-- [Node 1st gen](/Node-1st-gen/quickstarts/pubsub-helloworld/)
+- [Node 1세대](/Node-1st-gen/quickstarts/pubsub-helloworld/)
 
-This quickstart sample demonstrates using **Cloud Functions** triggered by **PubSub events**. The functions log the PubSub payload in a Hello world message.
+이 빠른 시작 샘플은 **PubSub 이벤트**에 의해 트리거되는 **Cloud Functions**를 사용하는 방법을 보여줍니다. 함수는 Hello World 메시지의 PubSub 페이로드를 기록합니다.
 
-### Test Lab trigger quickstart: Log when a matrix completes
+### 테스트 실험실 트리거 빠른 시작: 매트릭스가 완료될 때 로그 기록
 
-- [Node 2nd gen](/Node/quickstarts/testlab-matrix-completed/)
+- [Node 2세대](/Node/quickstarts/testlab-matrix-completed/)
 - [Python](/Python/quickstarts/testlab-matrix-completed/)
 
-### Firebase Alerts trigger quickstart: Send crash reports to Discord](/2nd-gen/alerts-to-discord/)
+### Firebase 알림 트리거 빠른 시작: 크래시 보고서를 Discord에 전송하기](/2nd-gen/alerts-to-discord/)
 
-- [Node 2nd gen](/Node/alerts-to-discord/)
+- [Node 2세대](/Node/alerts-to-discord/)
 - [Python](/Python/alerts-to-discord/)
-- Node 1st gen: not supported
+- Node 1세대: 지원되지 않음
 
-Trigger a function based on a Firebase Alert, and send information about the alert to a channel in a Discord server.
+Firebase 알림에 기반하여 함수를 트리거하고, 경고에 대한 정보를 Discord 서버의 채널에 전송합니다.
 
-### Custom Events: Save image metadata
+### 사용자 정의 이벤트: 이미지 메타데이터 저장
 
-- [Node 2nd gen](/Node/quickstarts/custom-events/)
+- [Node 2세대](/Node/quickstarts/custom-events/)
 - [Python](/Python/quickstarts/custom-events)
-- Node 1st gen: not supported
+- Node 1세대: 지원되지 않음
 
-Learn how to trigger a function based on an event sent by an extension
+확장 프로그램에서 전송된 이벤트를 기반으로 함수를 트리거하는 방법을 배웁니다.
 
-### Unit testing
+### 단위 테스트
 
-- [Test with Jest](/Node/test-functions-jest/)
-    - [Test with Jest and TypeScript](/Node/test-functions-jest-ts/)
-- [Test with Mocha](/Node/test-functions-mocha/)
+- [Jest로 테스트하기](/Node/test-functions-jest/)
+    - [Jest 및 TypeScript로 테스트하기](/Node/test-functions-jest-ts/)
+- [Mocha로 테스트하기](/Node/test-functions-mocha/)
 
 <a name="environment"></a>
-## Development Boilerplates
+## 개발 보일러플레이트
 
-The Firebase CLI generates sample code for Cloud Functions using JavaScript or TypeScript.
+Firebase CLI는 JavaScript 또는 TypeScript를 사용하여 Cloud Functions의 샘플 코드를 생성합니다.
 
-### Server-side generated pages w/ Handlebars templating and user sessions
+### Handlebars 템플릿 및 사용자 세션을 사용한 서버 측 생성 페이지
 
-- [Node (1st gen)](/Node-1st-gen/template-handlebars)
+- [Node (1세대)](/Node-1st-gen/template-handlebars)
 
-This sample shows how to serve server-side generated HTML pages using the [HandlebarsJs](http://handlebarsjs.com/) templating system and serve user-specific content by always passing the Firebase ID token in a `__session` cookie.
+이 샘플은 [HandlebarsJs](http://handlebarsjs.com/) 템플릿 시스템을 사용하여 서버 측에서 생성된 HTML 페이지를 제공하고, Firebase ID 토큰을 항상 `__session` 쿠키로 전달하여 사용자별 콘텐츠를 제공하는 방법을 보여줍니다.
 
 <a name="image"></a>
-## Image Processing
+## 이미지 처리
 
-Here are a few samples that show how you can process or analyze images using Cloud Functions.
+Cloud Functions를 사용하여 이미지를 처리하거나 분석하는 방법을 보여주는 몇 가지 샘플입니다.
 
-### Image Maker
+### 이미지 메이커
 
-- [Node (1st gen)](/Node-1st-gen/image-maker)
+- [Node (1세대)](/Node-1st-gen/image-maker)
 
-This sample demonstrates how to create various customized images such as sparkline or sphere charts through Cloud Functions and Hosting and serve it to the client.
-Uses an HTTP trigger.
+이 샘플은 Cloud Functions와 호스팅을 통해 스파크라인 또는 구형 차트와 같은 다양한 맞춤형 이미지를 생성하고 클라이언트에 제공하는 방법을 보여줍니다.
+HTTP 트리거를 사용합니다.
 
-### Convert images after upload
+### 업로드 후 이미지 변환
 
-- [Node (1st gen)](/Node-1st-gen/convert-images)
+- [Node (1세대)](/Node-1st-gen/convert-images)
 
-Demonstrates how to automatically convert images that are uploaded to Firebase Storage to JPEG using ImageMagick.
-Uses a Firebase Storage trigger.
+Firebase Storage에 업로드된 이미지를 자동으로 JPEG로 변환하는 방법을 보여줍니다. 
+Firebase Storage 트리거를 사용합니다.
 
-### Moderate offensive images
+### 공격적인 이미지 조정
 
-- [Node (1st gen)](/Node-1st-gen/moderate-images/)
+- [Node (1세대)](/Node-1st-gen/moderate-images/)
 
-Demonstrates how to automatically moderate offensive images that are uploaded to Firebase Storage by using the Google Cloud Vision API to detect offensive images and ImageMagick to blur these images.
-Uses a Firebase Storage trigger.
+Firebase Storage에 업로드된 공격적인 이미지를 자동으로 조정하는 방법을 보여줍니다. Google Cloud Vision API를 사용하여 공격적인 이미지를 감지하고 ImageMagick을 사용하여 이러한 이미지를 흐리게 처리합니다.
+Firebase Storage 트리거를 사용합니다.
 
-### Extract image metadata
+### 이미지 메타데이터 추출
 
-- [Node (1st gen)](/Node-1st-gen/exif-images/)
+- [Node (1세대)](/Node-1st-gen/exif-images/)
 
-Demonstrates how to automatically extract image's metadata using ImageMagick for images that are uploaded to Firebase Storage.
-Uses a Firebase Storage trigger.
+Firebase Storage에 업로드된 이미지에서 메타데이터를 자동으로 추출하는 방법을 보여줍니다.
+Firebase Storage 트리거를 사용합니다.
 
-### Task Queues: back up images from an API
+### 작업 큐: API에서 이미지 백업
 
-- [Node 2nd gen](/Node/taskqueues-backup-images/)
+- [Node 2세대](/Node/taskqueues-backup-images/)
 - [Python](/Python/taskqueues-backup-images/)
 
-See how to use Task Queues to meter traffic to a rate-limited API.
-
+모든 트래픽을 비율 제한 API로 조절하기 위해 작업 큐를 사용하는 방법을 살펴봅니다.
 
 <a name="rtdb"></a>
-## Firebase Realtime Database Data Consistency
+## Firebase 실시간 데이터베이스 데이터 일관성
 
-These samples show how to implement automatic data consistency such as keeping a count of children, having a max amount of node childs, cleaning up old data etc...
+이 샘플들은 자녀 수를 유지하거나, 노드 자식 수의 최대치를 갖고, 오래된 데이터를 정리하는 등 자동 데이터 일관성을 구현하는 방법을 보여줍니다.
 
-### LastModified Firebase Realtime Database tracking
+### LastModified Firebase 실시간 데이터베이스 추적
 
-- [Node (1st gen)](/Node-1st-gen/lastmodified-tracking)
+- [Node (1세대)](/Node-1st-gen/lastmodified-tracking)
 
-Tracking when the Firebase Database (or a subset) was last modified.
-Uses a Realtime Database trigger.
+Firebase 데이터베이스(또는 하위 집합)가 마지막으로 수정된 시간을 추적합니다.
+실시간 데이터베이스 트리거를 사용합니다.
 
-### Firebase Database child nodes count
+### Firebase Database 자식 노드 수
 
-- [Node (1st gen)](/Node-1st-gen/child-count)
+- [Node (1세대)](/Node-1st-gen/child-count)
 
-Keeps track of the number of child nodes of a Firebase Database element allowing clients to filter or order results using the child count.
-This can be useful to keep track of the number of "likes" or "followers" of something shared through social media.
-Uses a Realtime Database trigger.
+Firebase Database 요소의 자식 노드 수를 추적하여 클라이언트가 자식 수를 사용해 결과를 필터링하거나 정렬할 수 있게 합니다. 이는 소셜 미디어를 통해 공유되는 "좋아요" 또는 "팔로워" 수를 추적하는 데 유용할 수 있습니다. Realtime Database 트리거를 사용합니다.
 
-### Limit number of child nodes
+### 자식 노드 수 제한
 
-- [Node (1st gen)](/Node-1st-gen/limit-children)
+- [Node (1세대)](/Node-1st-gen/limit-children)
 
-Makes sure that the number of child nodes stays below a certain threshold. This can be useful to limit the number of lines of logs or chat history below a given number.
-Uses a Realtime Database trigger.
+자식 노드 수가 특정 임계값 이하로 유지되도록 합니다. 이는 로그 또는 채팅 기록의 라인 수를 주어진 숫자 이하로 제한하는 데 유용할 수 있습니다. Realtime Database 트리거를 사용합니다.
 
-### Removing old items from a list
+### 목록에서 오래된 항목 제거
 
-- [Node (1st gen)](/Node-1st-gen/delete-old-child-nodes)
+- [Node (1세대)](/Node-1st-gen/delete-old-child-nodes)
 
-This sample shows how to remove child nodes older than 2 hours from a Firebase Database list. This can be useful for removing outdated items from a collection.
-Uses a Realtime Database trigger.
+이 샘플은 Firebase Database 목록에서 2시간 이상 된 자식 노드를 제거하는 방법을 보여줍니다. 이는 컬렉션에서 구식 항목을 제거하는 데 유용할 수 있습니다. Realtime Database 트리거를 사용합니다.
 
 <a name="other"></a>
-## Solve other common use cases
+## 다른 일반적인 사용 사례 해결
 
-### Send FCM notifications
+### FCM 알림 전송
 
-- [Node (1st gen)](/Node-1st-gen/fcm-notifications)
+- [Node (1세대)](/Node-1st-gen/fcm-notifications)
 
-This sample demonstrates how to send a Firebase Cloud Messaging (FCM) notification from a Realtime Database triggered Function when users get new followers. The sample also features a Web UI to experience the FCM notification.
-Uses a Realtime Database trigger.
+이 샘플은 사용자가 새로운 팔로워를 얻었을 때 Realtime Database로 트리거된 함수에서 Firebase Cloud Messaging (FCM) 알림을 보내는 방법을 보여줍니다. 샘플에는 FCM 알림을 체험할 수 있는 웹 UI도 포함되어 있습니다. Realtime Database 트리거를 사용합니다.
 
-### Google Assistant says ordinal of given number
+### Google Assistant가 주어진 숫자의 서수를 말하기
 
-- [Node (1st gen)](/Node-1st-gen/assistant-say-number)
+- [Node (1세대)](/Node-1st-gen/assistant-say-number)
 
-This sample shows how to create an action for the Google Home/Assistant using the Actions SDK hosted on Cloud Functions. The sample action asks users to say a number and reads out the ordinal of that number.
-Uses an HTTP trigger.
+이 샘플은 Cloud Functions에서 호스팅된 Actions SDK를 사용하여 Google Home/Assistant를 위한 액션을 생성하는 방법을 보여줍니다. 샘플 액션은 사용자가 숫자를 말하도록 요청하고 해당 숫자의 서수를 읽어줍니다. HTTP 트리거를 사용합니다.
 
-### Authenticated JSON API
+### 인증된 JSON API
 
-- [Node (1st gen)](/Node-1st-gen/authenticated-json-api)
+- [Node (1세대)](/Node-1st-gen/authenticated-json-api)
 
-This sample shows how to authenticate access to a JSON API to only allow access to data for a specific Firebase user.
-Uses an HTTP trigger.
+이 샘플은 특정 Firebase 사용자에 대해서만 데이터 접근을 허용하기 위해 JSON API 접근을 인증하는 방법을 보여줍니다. HTTP 트리거를 사용합니다.
 
-### Authorized HTTP endpoint
+### 허가된 HTTP 엔드포인트
 
-- [Node (1st gen)](/Node-1st-gen/authorized-https-endpoint)
+- [Node (1세대)](/Node-1st-gen/authorized-https-endpoint)
 
-This sample shows how to restrict an HTTPS Function to only the Firebase users of your app.
-Only users who pass a valid Firebase ID token as a Bearer token in the `Authorization` header of the HTTP request or in a `__session` cookie are authorized to use the function.
-Checking the ID token is done with an ExpressJs middleware that also passes the decoded ID token in the Express request object.
-Uses an HTTP trigger.
+이 샘플은 앱의 Firebase 사용자만 사용하도록 HTTPS 기능을 제한하는 방법을 보여줍니다. 유효한 Firebase ID 토큰을 Bearer 토큰으로 HTTP 요청의 `Authorization` 헤더 또는 `__session` 쿠키에 전달하는 사용자만 기능을 사용할 수 있습니다. ID 토큰 검사는 ExpressJs 미들웨어로 수행되며, 해당 미들웨어는 Express 요청 객체에 디코딩된 ID 토큰을 전달합니다. HTTP 트리거를 사용합니다.
 
-### Authorize with 3rd-party authentication providers
+### 제3자 인증 제공자로 인증
 
-[Okta](/Node-1st-gen/okta-auth), [LinkedIn](/Node-1st-gen/linkedin-auth), [Spotify](/Node-1st-gen/spotify-auth), [Instagram](/Node-1st-gen/instagram-auth), or [Basic Auth](/Node-1st-gen/username-password-auth)
+[Okta](/Node-1st-gen/okta-auth), [LinkedIn](/Node-1st-gen/linkedin-auth), [Spotify](/Node-1st-gen/spotify-auth), [Instagram](/Node-1st-gen/instagram-auth), 또는 [기본 인증](/Node-1st-gen/username-password-auth)
 
-Demonstrates how to authorize with a 3rd party sign-in mechanism, create a Firebase custom auth token, update the user's profile and authorize Firebase.
-Uses an HTTP trigger.
+제3자 로그인 메커니즘으로 인증하고 Firebase 사용자 정의 인증 토큰을 생성하며, 사용자의 프로필을 업데이트하고 Firebase를 인증하는 방법을 보여줍니다. HTTP 트리거를 사용합니다.
 
-### Post GitHub commits to Slack channel
+### GitHub 커밋을 Slack 채널에 게시
 
-- [Node (1st gen)](/Node-1st-gen/github-to-slack)
+- [Node (1세대)](/Node-1st-gen/github-to-slack)
 
-Demonstrates how to automatically post GitHub commits to a Slack channel using an HTTPS triggered Function.
+HTTPS 트리거된 기능을 사용하여 GitHub 커밋을 Slack 채널에 자동으로 게시하는 방법을 보여줍니다.
 
-### Create and charge customers with [Stripe](/Node-1st-gen/stripe) or [Paypal](/Node-1st-gen/paypal)
+### [Stripe](/Node-1st-gen/stripe) 또는 [Paypal](/Node-1st-gen/paypal)로 고객 생성 및 청구
 
-Demonstrates hows to integrate Firebase Auth and the Realtime database with Stripe via the Stripe Node.js library and shows how to create HTTP endpoints to charge customers via Paypal.
+Firebase Auth와 Realtime Database를 Stripe의 Stripe Node.js 라이브러리를 통해 통합하는 방법과 Paypal을 통해 고객에게 청구하기 위한 HTTP 엔드포인트를 생성하는 방법을 보여줍니다.
 
-### Text moderation
+### 텍스트 검열
 
-- [Node (1st gen)](/Node-1st-gen/text-moderation)
+- [Node (1세대)](/Node-1st-gen/text-moderation)
 
-Demonstrates how to moderate user input text for bad words. This can be used to moderate usernames, chat or forum messages.
-Uses a Realtime Database trigger.
+사용자 입력 텍스트에서 나쁜 단어를 검열하는 방법을 보여줍니다. 이는 사용자 이름, 채팅 또는 포럼 메시지를 검열하는 데 사용될 수 있습니다. Realtime Database 트리거를 사용합니다.
 
-### Email confirmation
+### 이메일 확인
 
-- [Node (1st gen)](/Node-1st-gen/email-confirmation)
+- [Node (1세대)](/Node-1st-gen/email-confirmation)
 
-Sends email confirmation after users subscribed to a mailing list.
-Uses a Realtime Database trigger.
+사용자가 메일링 리스트에 구독한 후 이메일 확인을 전송합니다. Realtime Database 트리거를 사용합니다.
 
-### Automatic message translation
+### 자동 메시지 번역
 
-- [Node (1st gen)](/Node-1st-gen/message-translation)
+- [Node (1세대)](/Node-1st-gen/message-translation)
 
-Integrates the Google Translate API to perform automatic text translation across any number of languages. Language codes can be stored in Firebase for on the fly changes.
-Uses a Realtime Database trigger.
+Google Translate API를 통합하여 여러 언어 간 자동 텍스트 번역을 수행합니다. 언어 코드는 Firebase에 저장되어 실시간 변경이 가능합니다. Realtime Database 트리거를 사용합니다.
 
-### Automatic URL shortener
+### 자동 URL 단축기
 
-- [Node (1st gen)](/Node-1st-gen/url-shortener)
+- [Node (1세대)](/Node-1st-gen/url-shortener)
 
-Integrates the Bit.ly API to shorten URLs automatically as they are added to the database.
-Uses a Realtime Database trigger.
+Bit.ly API를 통합하여 데이터베이스에 추가되는 URL을 자동으로 단축합니다. Realtime Database 트리거를 사용합니다.
 
-### Full-text search for [Realtime Database](/Node-1st-gen/fulltext-search) or [Firestore](/Node-1st-gen/fulltext-search-firestore)
+### [Realtime Database](/Node-1st-gen/fulltext-search) 또는 [Firestore](/Node-1st-gen/fulltext-search-firestore) 전체 텍스트 검색
 
-Enable full-text search on Firebase Database data or Firestore documents by using a hosted search service.
-Uses a Realtime Database or Firestore trigger.
+호스팅된 검색 서비스를 사용하여 Firebase Database 데이터 또는 Firestore 문서에서 전체 텍스트 검색을 활성화합니다. Realtime Database 또는 Firestore 트리거를 사용합니다.
 
-### User data cleanup
+### 사용자 데이터 정리
 
-- [Node (1st gen)](/Node-1st-gen/user-data-cleanup)
+- [Node (1세대)](/Node-1st-gen/user-data-cleanup)
 
-Deletes all associated user data in the Realtime database when a user deletes his Firebase account.
-Uses an Auth trigger.
-**This code has moved to its own repo at
-https://github.com/firebase/user-data-protection**
+사용자가 Firebase 계정을 삭제할 때 Realtime Database에서 모든 관련 사용자 데이터를 삭제합니다. Auth 트리거를 사용합니다.
+**이 코드는
+https://github.com/firebase/user-data-protection에 있는 자체 리포지토리로 이동했습니다.**
 
-### Export your data to a Google Spreadsheet
+### 데이터를 Google 스프레드시트로 내보내기
 
-- [Node (1st gen)](/Node-1st-gen/google-sheet-sync)
+- [Node (1세대)](/Node-1st-gen/google-sheet-sync)
 
-This sample demonstrates how to sync new data written to a Firebase database to a Google Sheet. It includes a method for obtaining, storing, and using Oauth2 tokens for Google API access.
-Uses HTTPS triggers and Realtime Database triggers.
+이 샘플은 Firebase 데이터베이스에 작성된 새로운 데이터를 Google 시트에 동기화하는 방법을 보여줍니다. Google API 접근을 위한 Oauth2 토큰을 얻고 저장하며 사용하는 방법을 포함합니다. HTTPS 트리거와 Realtime Database 트리거를 사용합니다.
 
-### Export your data to Big Query
+### 데이터를 Big Query로 내보내기
 
-- [Node (1st gen)](/Node-1st-gen/bigquery-import)
+- [Node (1세대)](/Node-1st-gen/bigquery-import)
 
-Copies Firebase Database elements into BigQuery automatically. This can be useful for instance for further logs analysis.
-Uses a Realtime Database trigger.
+Firebase Database 요소를 BigQuery로 자동으로 복사합니다. 이는 로그 분석을 위한 예를 들면 유용할 수 있습니다. Realtime Database 트리거를 사용합니다.
 
-### Webhook upon Firebase Database writes
+### Firebase Database에 쓰기 시 Webhook 요청
 
-- [Node (1st gen)](/Node-1st-gen/minimal-webhook)
+- [Node (1세대)](/Node-1st-gen/minimal-webhook)
 
-Writing to the Firebase Database triggers a request to a callback URL (a Webhook). The content of the modified Data is sent to the Webhook.
-Uses a Realtime Database trigger.
+Firebase Database에 쓰기를 하면 콜백 URL(웹후크)에 요청이 트리거됩니다. 수정된 데이터의 내용이 웹후크로 전송됩니다. Realtime Database 트리거를 사용합니다.
 
-### Send a survey when users update your app
+### 앱 업데이트 시 사용자에게 설문 조사 전송
 
-- [Node (1st gen)](/Node-1st-gen/survey-app-update)
+- [Node (1세대)](/Node-1st-gen/survey-app-update)
 
-This sample shows how to send a survey to your users who have updated your app. App Update is detected using a Firebase Analytics event.
-Uses an Analytics trigger.
+이 샘플은 앱을 업데이트한 사용자에게 설문조사를 전송하는 방법을 보여줍니다. 앱 업데이트는 Firebase Analytics 이벤트를 사용하여 감지됩니다. Analytics 트리거를 사용합니다.
 
-### Send a coupon to user who have completed a purchase
+### 구매 완료한 사용자에게 쿠폰 전송
 
-- [Node (1st gen)](/Node-1st-gen/coupon-on-purchase)
+- [Node (1세대)](/Node-1st-gen/coupon-on-purchase)
 
-This sample shows how to send a coupon to your users who have just purchased something. 10% off on your next purchase!
-Uses an Analytics trigger.
+이 샘플은 막 구매한 사용자에게 쿠폰을 보내는 방법을 보여줍니다. 다음 구매 시 10% 할인! Analytics 트리거를 사용합니다.
 
-### Delete inactive users accounts via cron
+### 비활성 사용자 계정 주기적으로 삭제
 
-- [Node (1st gen)](/Node-1st-gen/delete-unused-accounts-cron)
+- [Node (1세대)](/Node-1st-gen/delete-unused-accounts-cron)
 
-Periodically deletes the accounts of users who have not signed in in the last month.
-Uses an HTTPS trigger.
+지난 한 달 동안 로그인하지 않은 사용자의 계정을 주기적으로 삭제합니다. HTTPS 트리거를 사용합니다.
 
-### Developer Motivator
+### 개발자 동기 부여
 
-- [Node (1st gen)](/Node-1st-gen/developer-motivator)
+- [Node (1세대)](/Node-1st-gen/developer-motivator)
 
-This sample demonstrates how to send a Firebase Cloud Messaging (FCM) notification to the developer device each time your app gains or loses a user.
-Uses an Analytics trigger.
+이 샘플은 앱이 사용자를 얻거나 잃을 때마다 개발자 기기에 Firebase Cloud Messaging (FCM) 알림을 전송하는 방법을 보여줍니다. Analytics 트리거를 사용합니다.
 
-### Audio Files Conversion
+### 오디오 파일 변환
 
-- [Node (1st gen)](/Node-1st-gen/ffmpeg-convert-audio)
+- [Node (1세대)](/Node-1st-gen/ffmpeg-convert-audio)
 
-This sample uses ffmpeg / fluent-ffmpeg and automatically converts audio files that are uploaded to Cloud Storage to FLAC file format with mono-channel audio @ 16000hz.
-Uses a Storage trigger.
+이 샘플은 ffmpeg / fluent-ffmpeg를 사용하여 Cloud Storage에 업로드된 오디오 파일을 자동으로 FLAC 파일 형식으로 변환합니다. 오디오 채널은 단일이며 샘플링 주파수는 16000hz입니다. Storage 트리거를 사용합니다.
 
-### Presence for Firestore
+### Firestore의 Presence
 
-- [Node (1st gen)](/Node-1st-gen/presence-firestore)
+- [Node (1세대)](/Node-1st-gen/presence-firestore)
 
-Build a simple online / offline status indicator for your users by leveraging Firestore and Realtime Database together.
-Uses a Realtime Database trigger.
+Firestore와 Realtime Database를 함께 활용하여 사용자들의 간단한 온라인/오프라인 상태 표시기를 구축합니다. Realtime Database 트리거를 사용합니다.
 
-### Publish Models to Firebase ML
+### Firebase ML에 모델 게시
 
-- [Node (1st gen)](/Node-1st-gen/publish-model)
+- [Node (1세대)](/Node-1st-gen/publish-model)
 
-Automatically publishes models to Firebase ML for each TensorFlow Lite file that is uploaded to Firebase Storage.
+Firebase Storage에 업로드된 각 TensorFlow Lite 파일에 대해 자동으로 Firebase ML에 모델을 게시합니다.
 
-### Get information about a YouTube channel
+### YouTube 채널에 대한 정보 가져오기 
 
-- [Node (1st gen)](/Node-1st-gen/youtube)
+- [Node (1세대)](/Node-1st-gen/youtube)
 
-This sample shows how to query the Youtube Data API.
-Uses an HTTPS trigger.
+이 샘플은 YouTube Data API를 쿼리하는 방법을 보여줍니다. HTTPS 트리거를 사용합니다.
 
-## Contributing
+## 기여하기
 
-We'd love that you contribute to the project. Before doing so please read our [Contributor guide](CONTRIBUTING.md).
+프로젝트에 기여하고 싶습니다. 기여하기 전에 [기여자 가이드](CONTRIBUTING.md)를 읽어 주세요.
 
-## License
+## 라이센스
 
-© Google, 2015-2023. Licensed under an [Apache-2](LICENSE) license.
+© Google, 2015-2023. [Apache-2](LICENSE) 라이센스에 의해 라이센스가 부여됩니다.
 
-## Build Status
+## 빌드 상태
 
-[![Actions Status][gh-actions-badge]][gh-actions]
+[![작업 상태][gh-actions-badge]][gh-actions]
 
 [gh-actions]: https://github.com/firebase/functions-samples/actions
 [gh-actions-badge]: https://github.com/firebase/functions-samples/workflows/CI%20Tests/badge.svg
+
